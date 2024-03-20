@@ -1,6 +1,5 @@
-import { cookies } from 'next/headers';
-import Results from './index';
-
+import { cookies } from "next/headers";
+import Results from "./index";
 
 async function Page() {
   const cookieStore = cookies();
@@ -8,37 +7,40 @@ async function Page() {
   let data = [];
 
   cookieStore.getAll().forEach(({ name, value }) => {
-    if (name.endsWith('.accessToken')) {
+    if (name.endsWith(".accessToken")) {
       accessToken = value;
     }
   });
 
   const metadata = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`
-    }
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+    },
   };
 
   try {
-    const resp = await fetch(`${process.env.BNA_API_URL}/bnas/results`, metadata);
+    const resp = await fetch(
+      `${process.env.NEXT_PUBLIC_BNA_API_URL}/bnas/results`,
+      metadata
+    );
 
     if (!resp.ok) {
       console.error(resp.text());
-      return { success: false, errors: {message: 'oops! something went wrong!' }};
+      return {
+        success: false,
+        errors: { message: "oops! something went wrong!" },
+      };
     }
 
     data = await resp.json();
   } catch (error) {
     console.error(error);
-    throw new Error('Fetch failed!');
+    throw new Error("Fetch failed!");
   }
 
-  return (
-    <Results data={data} />
-  );
+  return <Results data={data} />;
 }
-
 
 export default Page;

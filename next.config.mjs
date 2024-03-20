@@ -1,21 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Use the CDN in production and localhost for development.
-  assetPrefix: process.env.IS_PROD === 'true'
-    ? 'https://cdn.mycdn.com'
-    : undefined,
+  // assetPrefix:
+  // process.env.IS_PROD === "true" ? "https://cdn.mycdn.com" : undefined,
 
   // https://nextjs.org/docs/app/api-reference/next-config-js/compress#changing-the-compression-algorithm
   // For self-hosting this will need to be updated
   compress: true,
   devIndicators: {
-    buildActivityPosition: 'bottom-right'
+    buildActivityPosition: "bottom-right",
   },
   // distDir: 'build',
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
-    ignoreDuringBuilds: false
+    ignoreDuringBuilds: false,
   },
 
   // Only load the modules you are actually using, while still giving you the convenience of
@@ -24,7 +23,7 @@ const nextConfig = {
     optimizePackageImports: [],
     turbotrace: {
       // control the log level of the turbotrace, default is `error`
-      logLevel: 'error',
+      logLevel: "error",
 
       // control if the log of turbotrace should contain the details of the analysis, default is `false`
       logDetail: false,
@@ -50,18 +49,18 @@ const nextConfig = {
       // processCwd?: string
 
       // control the maximum memory usage of the `turbotrace`, in `MB`, default is `6000`.
-      memoryLimit: 6000
+      memoryLimit: 6000,
     },
-    typedRoutes: true
+    typedRoutes: true,
   },
 
-  generateBuildId: async () => {
-    // This could be anything, using the latest git hash
-    return process.env.GIT_HASH;
-  },
+  // generateBuildId: async () => {
+  //   // This could be anything, using the latest git hash
+  //   return process.env.GIT_HASH;
+  // },
   generateEtags: true,
   httpAgentOptions: {
-    keepAlive: true
+    keepAlive: true,
   },
 
   // handle cache
@@ -70,16 +69,15 @@ const nextConfig = {
 
   logging: {
     fetches: {
-      fullUrl: false
-    }
+      fullUrl: false,
+    },
   },
 
   poweredByHeader: false,
 
   typescript: {
-    ignoreBuildErrors: true
-  }
+    ignoreBuildErrors: true,
+  },
 };
-
 
 export default nextConfig;
