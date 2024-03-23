@@ -1,3 +1,10 @@
+import path, { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Use the CDN in production and localhost for development.
@@ -41,6 +48,7 @@ const nextConfig = {
        * set the `experimental.outputFileTracingRoot` has the same effect
        * if the `experimental.outputFileTracingRoot` and this option are both set, the `experimental.turbotrace.contextDirectory` will be used
        */
+      outputFileTracingRoot: path.join(__dirname, '../../'),
       // contextDirectory?: string
 
       /**
