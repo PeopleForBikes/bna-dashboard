@@ -7,6 +7,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
+  devIndicators: {
+    buildActivityPosition: 'bottom-right'
+  },
+
   eslint: {
     ignoreDuringBuilds: false
   },
@@ -24,6 +29,11 @@ const nextConfig = {
 
   typescript: {
     ignoreBuildErrors: true
+  },
+
+  experimental: {
+    optimizePackageImports: [],
+    typedRoutes: true
   }
 };
 
