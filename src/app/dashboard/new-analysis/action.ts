@@ -50,7 +50,7 @@ async function ServerAction(prevState: Result, formData: FormData): Promise<Resu
   };
 
   try {
-    const resp = await fetch(`${process.env.NEXT_PUBLIC_BNA_API_URL}/bnas/enqueue`, metadata);
+    const resp = await fetch(`${process.env.BNA_API_URL}/bnas/enqueue`, metadata);
 
     if (!resp.ok) {
       console.error(resp.headers);

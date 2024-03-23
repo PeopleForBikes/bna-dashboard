@@ -70,57 +70,57 @@ export default Submissions;
 
 
 
-  // useEffect(() => {
-  //   async function fetchS3Results() {
-  //     const res = await fetch('/submissions?status=Pending');
-  //     const data = await res.json();
-  //     setSubmissions(data.data);
-  //   }
+// useEffect(() => {
+//   async function fetchS3Results() {
+//     const res = await fetch('/submissions?status=Pending');
+//     const data = await res.json();
+//     setSubmissions(data.data);
+//   }
 
-  //   fetchS3Results();
-  // }, []);
- // const handleOnClickAccept = (event, submission) => {
-  //   let s = submission;
-  //   s.status = 'Approved';
-  //   fetch(`/submissions?cognito_access=${cognito_access}`, {
-  //     method: 'PATCH',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //     },
-  //     body: JSON.stringify(s),
-  //   })
-  //     .then((result) => {
-  //       console.log('client result', result);
-  //     })
-  //     .catch((err) => {
-  //       console.log('fetch error client', err);
-  //     });
+//   fetchS3Results();
+// }, []);
+// const handleOnClickAccept = (event, submission) => {
+//   let s = submission;
+//   s.status = 'Approved';
+//   fetch(`/submissions?cognito_access=${cognito_access}`, {
+//     method: 'PATCH',
+//     headers: {
+//       'content-type': 'application/json',
+//     },
+//     body: JSON.stringify(s),
+//   })
+//     .then((result) => {
+//       console.log('client result', result);
+//     })
+//     .catch((err) => {
+//       console.log('fetch error client', err);
+//     });
 
-  //   const body = {
-  //     country: s.country,
-  //     city: s.city,
-  //     region: s.region,
-  //     fips_code: s.fipsCode,
-  //   };
-  //   // 👇 call backend endpoint using fetch API
-  //   fetch(`/analysis?cognito_access=${cognito_access}`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(body),
-  //     headers: {
-  //       'content-type': 'application/json',
-  //       Authorization: `Bearer ${cognito_access}`,
-  //     },
-  //   })
-  //     .then((result) => {
-  //       console.log('client result', result);
-  //     })
-  //     .catch((err) => {
-  //       console.log('fetch error client', err);
-  //     });
-  // };
+//   const body = {
+//     country: s.country,
+//     city: s.city,
+//     region: s.region,
+//     fips_code: s.fipsCode,
+//   };
+//   // 👇 call backend endpoint using fetch API
+//   fetch(`/analysis?cognito_access=${cognito_access}`, {
+//     method: 'POST',
+//     body: JSON.stringify(body),
+//     headers: {
+//       'content-type': 'application/json',
+//       Authorization: `Bearer ${cognito_access}`,
+//     },
+//   })
+//     .then((result) => {
+//       console.log('client result', result);
+//     })
+//     .catch((err) => {
+//       console.log('fetch error client', err);
+//     });
+// };
 
 // const handleOnClickReject = (event, submission) => {
-  //   let s = submission;
-  //   s.status = 'Rejected';
+//   let s = submission;
+//   s.status = 'Rejected';
 
-  // };
+// };

@@ -1,4 +1,4 @@
-@cognito_access = <INSERT_TOKEN_HERE> 
+@cognito_access = <token>
 
 ###
 GET https://api.peopleforbikes.xyz/bnas/results
