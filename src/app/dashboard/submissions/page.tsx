@@ -24,20 +24,19 @@ async function Page() {
   try {
     const resp = await fetch(`${process.env.NEXT_PUBLIC_BNA_API_URL}/cities/submissions?status=Pending`, metadata);
 
-    if (!resp.ok) {
-      console.error(await resp.text());
-      return { success: false, errors: {message: 'oops! something went wrong!' }};
-    }
+    !resp.ok
+      ? console.error('Submission response not OK:', await resp.text())
+      : data = await resp.json()
+    ;
 
-    data = await resp.json();
+    console.info('Submission data:', data);
+    return (
+      <Submissions data={data} />
+    );
   } catch (error) {
-    console.error(error);
-    throw new Error('Fetch failed!');
+    console.error('Submission request failed:', error);
+    return <Submissions data={data} />;
   }
-
-  return (
-    <Submissions data={data} />
-  );
 }
 
 
