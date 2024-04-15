@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@aws-amplify/ui-react':
-    specifier: 6.1.6
-    version: 6.1.6(@types/react@18.2.78)(aws-amplify@6.0.28)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 6.1.7
+    version: 6.1.7(@types/react@18.2.78)(aws-amplify@6.0.28)(react-dom@18.2.0)(react@18.2.0)
   '@hookform/resolvers':
     specifier: ^3.3.4
     version: 3.3.4(react-hook-form@7.51.3)
@@ -233,13 +233,13 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@aws-amplify/ui-react-core@3.0.12(@types/react@18.2.78)(aws-amplify@6.0.28)(react@18.2.0):
-    resolution: {integrity: sha512-BuWkE0fnG1qxr85JA5QFFPq3vnFaE7Xqi4QZWFXO8Tbstx5s4/lOwKHlKbyMfb8a22SEmPVeXthSyii9WUwOdw==}
+  /@aws-amplify/ui-react-core@3.0.13(@types/react@18.2.78)(aws-amplify@6.0.28)(react@18.2.0):
+    resolution: {integrity: sha512-Tj9pUVuQb9XmxFLx7Ea7rI8udimex1gxJD8vAhD4E/46hqG5DCar45GVcV5Dwf+IjA0KY7vH9m6fL4HST6BgXw==}
     peerDependencies:
-      aws-amplify: ^6.0.2
+      aws-amplify: ^6.0.26
       react: ^16.14.0 || ^17.0 || ^18.0
     dependencies:
-      '@aws-amplify/ui': 6.0.12(aws-amplify@6.0.28)(xstate@4.38.3)
+      '@aws-amplify/ui': 6.0.13(aws-amplify@6.0.28)(xstate@4.38.3)
       '@xstate/react': 3.2.2(@types/react@18.2.78)(react@18.2.0)(xstate@4.38.3)
       aws-amplify: 6.0.28(aws-cdk-lib@2.136.0)(constructs@10.3.0)
       lodash: 4.17.21
@@ -251,18 +251,18 @@ packages:
       - '@xstate/fsm'
     dev: false
 
-  /@aws-amplify/ui-react@6.1.6(@types/react@18.2.78)(aws-amplify@6.0.28)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nir04MLahGQIYKFZ9a7iPIaQmB96M1AgA3AxFlsJ75Dn//p2BlhpSbPWrCJbeyzONuPPelOaduxeb3d4hYHTLA==}
+  /@aws-amplify/ui-react@6.1.7(@types/react@18.2.78)(aws-amplify@6.0.28)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-TWW3Q08XSfMQYsGBkOBAwHqbZf0CEB1iIz84/sLwk84Yf9LrUz5EcJqw84goPK2jydX3lkmydI223+wfT6UZ+w==}
     peerDependencies:
-      aws-amplify: ^6.0.2
+      aws-amplify: ^6.0.26
       react: ^16.14.0 || ^17.0 || ^18.0
       react-dom: ^16.14.0 || ^17.0 || ^18.0
     peerDependenciesMeta:
       aws-amplify:
         optional: true
     dependencies:
-      '@aws-amplify/ui': 6.0.12(aws-amplify@6.0.28)(xstate@4.38.3)
-      '@aws-amplify/ui-react-core': 3.0.12(@types/react@18.2.78)(aws-amplify@6.0.28)(react@18.2.0)
+      '@aws-amplify/ui': 6.0.13(aws-amplify@6.0.28)(xstate@4.38.3)
+      '@aws-amplify/ui-react-core': 3.0.13(@types/react@18.2.78)(aws-amplify@6.0.28)(react@18.2.0)
       '@radix-ui/react-direction': 1.0.0(react@18.2.0)
       '@radix-ui/react-dropdown-menu': 1.0.0(@types/react@18.2.78)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-slider': 1.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -279,10 +279,10 @@ packages:
       - xstate
     dev: false
 
-  /@aws-amplify/ui@6.0.12(aws-amplify@6.0.28)(xstate@4.38.3):
-    resolution: {integrity: sha512-8TygWyqtn3hnfUzO67xJtitBTreblbfj3cfRwfDgpoy8JfhIZPrjCDTPGqemXMKLGW2P0TaMnTvz+OxX2X637w==}
+  /@aws-amplify/ui@6.0.13(aws-amplify@6.0.28)(xstate@4.38.3):
+    resolution: {integrity: sha512-65yHXSrTm4O9oa8NJIFKYC/ZLZOUqWvUCEd7PX8bq3VbaTHrb0linatedwJdiTX1no8BUOnm/ldgprmbFOCCig==}
     peerDependencies:
-      aws-amplify: ^6.0.2
+      aws-amplify: ^6.0.26
       xstate: ^4.33.6
     peerDependenciesMeta:
       xstate:
@@ -3502,7 +3502,7 @@ packages:
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
-      minimatch: 9.0.3
+      minimatch: 9.0.4
       minipass: 7.0.4
       path-scurry: 1.10.1
 
@@ -4115,13 +4115,13 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
+    dev: true
 
   /minimatch@9.0.4:
     resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
-    dev: true
 
   /minimist-options@4.1.0:
     resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
