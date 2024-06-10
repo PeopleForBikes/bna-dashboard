@@ -25,7 +25,7 @@
   "dependencies": {
     "@aws-amplify/ui-react": "6.1.12",
     "@hookform/resolvers": "^3.4.2",
-    "aws-amplify": "6.3.4",
+    "aws-amplify": "6.3.6",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-error-boundary": "4.0.13",
