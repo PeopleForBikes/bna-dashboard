@@ -31,7 +31,7 @@
     "react-error-boundary": "4.0.13",
     "react-hook-form": "7.52.0",
     "react-spinners": "0.14.1",
-    "ws": "8.17.1",
+    "ws": "8.18.0",
     "zod": "3.23.8"
   },
   "scripts": {
