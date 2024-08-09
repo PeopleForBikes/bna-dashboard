@@ -20,14 +20,16 @@
       "@/*": ["./src/*"],
       "@Components/*": ["./src/components/*"],
       "@Components": ["./src/components"],
+      "@Hooks/*": ["./src/hooks/*"],
+      "@Hooks": ["./src/hooks"],
       "@Icons/*": ["./src/components/Icons/*"],
       "@Icons": ["./src/components/Icons"],
       "@Images/*": ["./src/assets/images/*"],
       "@Images": ["./src/assets/images"],
       "@Styles/*": ["./src/assets/styles/*"],
       "@Styles": ["./src/assets/styles"],
-      "@Utils/*": ["./src/app/utils/*"],
-      "@Utils": ["./src/app/utils"]
+      "@Utils/*": ["./src/utilities/*"],
+      "@Utils": ["./src/utilities"]
     }
   },
   "include": [
