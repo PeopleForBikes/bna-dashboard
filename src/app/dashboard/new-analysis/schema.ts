@@ -4,7 +4,7 @@ import * as z from 'zod';
 const formSchema = z.object({
   country: z.string({
     required_error: 'Country is required by zod'
-  }),
+  }).min(3).max(20),
   city: z.string({
     required_error: 'City is required by zod'
   }),

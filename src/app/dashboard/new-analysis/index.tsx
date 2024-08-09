@@ -1,59 +1,47 @@
 'use client';
 
-import { useActionState, useCallback, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useCallback } from 'react';
 
+import useForm from '@Hooks/useForm';
 import ResetButton from '@Components/ResetButton';
 import SubmitButton from '@Components/SubmitButton';
 
-import ServerAction from './action';
-import { FormSchema } from './schema';
+import newAnalysisFormAction from './actions';
+import newAnalysisFormSchema from './schema';
 import styles from './styles.module.css';
 
 // ADD IMPORT CSV FUNCTIONALITY HERE
 
+type InitalFormData ={
+  country: '',
+  city: '',
+  region: '',
+  fips_code: ''
+};
+
 function NewAnalysis() {
   const {
-    clearErrors,
-    register,
-    reset,
-    setError,
-    formState: { isValid, errors }
-  } = useForm<FormSchema>({
-    defaultValues: {
-      country: '',
-      city: '',
-      region: '',
-      fips_code: ''
-    },
-    resetOptions: {
-      keepDirtyValues: true,  // user-interacted input will be retained
-      keepErrors: false       // input errors will be retained with value update
-    }
+    handleAction, handleSubmit,
+    serverReply, isPending,
+    validationErrors, errors
+  } = useForm({
+    schema: newAnalysisFormSchema,
+    action: newAnalysisFormAction,
+    initialActionState: { success: false, errors: null, data: null }
   });
 
-  const initialState = { success: false, errors: [] };
-  const [serverReply, formAction, isPending] = useActionState(ServerAction, initialState);
-
-  const handleReset = useCallback(() => reset(), [reset]);
-
-  useEffect(() => {
-    if (serverReply.errors && serverReply.errors.length > 0) {
-      clearErrors();
-
-      for (const error of serverReply.errors) {
-        const { name, message } = error;
-        setError(name, { message });
-      };
-    }
-
-    if (serverReply.success) {
-      reset();
-    }
-  }, [clearErrors, reset, setError, serverReply]);
+  const handleReset = useCallback(() => {
+    (document.getElementById('NewAnalysisForm') as HTMLFormElement)?.reset();
+  }, []);
 
   return (
-    <form className={styles['form']} action={formAction}>
+    <form
+      id="NewAnalysisForm"
+      name="NewAnalysisForm"
+      className={styles['form']}
+      action={handleAction}   //server
+      onSubmit={handleSubmit} //client
+    >
       { serverReply.success
         ? <p className={styles['success']}>Analysis submitted successfully!</p>
         : null
@@ -61,30 +49,54 @@ function NewAnalysis() {
 
       <div className={styles['inputs']}>
         <div className={styles['input-container']}>
-          <label htmlFor="country">Country</label>
-          <input id="country"
-            {...register('country', { required: true })}
+          <div>
+            <label htmlFor="country">Country</label>
+            <span>{validationErrors.country?.message}</span>
+          </div>
+          <input
+            id="country"
+            name="country"
+            type="text"
+            required={true}
           />
         </div>
 
         <div className={styles['input-container']}>
-          <label htmlFor="city">City</label>
-          <input id="city"
-            {...register('city', { required: true })}
+          <div>
+           <label htmlFor="city">City</label>
+           <span>{validationErrors.city?.message}</span>
+          </div>
+          <input
+            id="city"
+            name="city"
+            type="text"
+            required={true}
           />
         </div>
 
         <div className={styles['input-container']}>
-          <label htmlFor="region">Region</label>
-          <input id="region"
-            {...register('region', { required: true })}
+          <div>
+            <label htmlFor="region">Region</label>
+            <span>{validationErrors.region?.message}</span>
+          </div>
+          <input
+            id="region"
+            name="region"
+            type="text"
+            required={true}
           />
         </div>
 
         <div className={styles['input-container']}>
-          <label htmlFor="fips_code">FIPS Code</label>
-          <input id="fips_code"
-            {...register('fips_code', { required: true })}
+          <div>
+            <label htmlFor="fips_code">FIPS Code</label>
+            <span>{validationErrors.fips_code?.message}</span>
+          </div>
+          <input
+            id="fips_code"
+            name="fips_code"
+            type="text"
+            required={true}
         />
         </div>
       </div>
