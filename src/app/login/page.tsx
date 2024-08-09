@@ -10,7 +10,7 @@ function Page() {
   });
 
   if (authStatus === 'authenticated') {
-    return redirect('/dashboard/submissions');
+    return redirect('/dashboard');
   }
 
   return <Authenticator loginMechanisms={['username']} hideSignUp={true} />;

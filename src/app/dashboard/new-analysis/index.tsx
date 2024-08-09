@@ -1,15 +1,16 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useFormState } from 'react-dom';
+import { useActionState, useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
+import ResetButton from '@Components/ResetButton';
 import SubmitButton from '@Components/SubmitButton';
 
 import ServerAction from './action';
 import { FormSchema } from './schema';
 import styles from './styles.module.css';
 
+// ADD IMPORT CSV FUNCTIONALITY HERE
 
 function NewAnalysis() {
   const {
@@ -32,7 +33,9 @@ function NewAnalysis() {
   });
 
   const initialState = { success: false, errors: [] };
-  const [serverReply, formAction] = useFormState(ServerAction, initialState);
+  const [serverReply, formAction, isPending] = useActionState(ServerAction, initialState);
+
+  const handleReset = useCallback(() => reset(), [reset]);
 
   useEffect(() => {
     if (serverReply.errors && serverReply.errors.length > 0) {
@@ -50,16 +53,13 @@ function NewAnalysis() {
   }, [clearErrors, reset, setError, serverReply]);
 
   return (
-    <section className={styles['layout']}>
-      <h1>Submit a New Analysis</h1>
+    <form className={styles['form']} action={formAction}>
+      { serverReply.success
+        ? <p className={styles['success']}>Analysis submitted successfully!</p>
+        : null
+      }
 
-      <form className={styles['form']} action={formAction}>
-
-        { serverReply.success
-          ? <p className={styles['success']}>Analysis submitted successfully!</p>
-          : null
-        }
-
+      <div className={styles['inputs']}>
         <div className={styles['input-container']}>
           <label htmlFor="country">Country</label>
           <input id="country"
@@ -86,13 +86,23 @@ function NewAnalysis() {
           <input id="fips_code"
             {...register('fips_code', { required: true })}
         />
+        </div>
       </div>
 
-      <SubmitButton text="Submit" />
-    </form>
+      <div className={styles['actions']}>
+        <ResetButton
+          text="Reset"
+          onClick={handleReset}
+        />
 
-    </section>
+        <SubmitButton
+          text="Submit"
+          isPending={isPending}
+        />
+      </div>
+    </form>
   );
 }
+
 
 export default NewAnalysis;

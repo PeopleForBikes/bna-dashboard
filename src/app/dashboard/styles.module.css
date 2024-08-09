@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    align-self: flex-start;
+  }
+}
+
+.card {
+  border: 1px solid #eaeaea;
+}
+
+.header {
+  padding: 24px;
+
+  .title {
+    margin: 0;
+  }
+}
+
+.content {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+
+  .column {
+    span {
+      display: inline-block;
+    }
+
+    .location {
+      p > span:first-child {
+        width: 100px;
+        font-weight: bold;
+      }
+    }
+
+    &:nth-child(2) {
+      p > span:first-child {
+        width: 150px;
+        font-weight: bold;
+      }
+      p > span:last-child {
+        margin-inline-start: 10px;
+      }
+    }
+  }
+
+
+
+}
