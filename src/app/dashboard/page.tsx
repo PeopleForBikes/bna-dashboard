@@ -1,3 +1,5 @@
+'use server';
+
 import sql from '@Utils/db';
 import styles from './styles.module.css';
 
