@@ -1,21 +1,18 @@
 'use client';
 
-import { useFormStatus } from 'react-dom';
-import ClipLoader from 'react-spinners/ClipLoader';
 
+import ClipLoader from 'react-spinners/ClipLoader';
 import styles from './styles.module.css';
 
 
-function SubmitButton({ text }: { text: string }) {
-  const { pending } = useFormStatus();
-
+function SubmitButton({ text, isPending }: { text: string, isPending: boolean }) {
   return (
     <button
-      aria-disabled={pending}
+      aria-disabled={isPending}
       className={styles['button']}
       type="submit"
     >
-      { pending
+      {isPending
         ? <ClipLoader color={'#fff'} loading={true} size={15} />
         : text
       }

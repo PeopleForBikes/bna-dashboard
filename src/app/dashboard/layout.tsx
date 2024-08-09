@@ -1,12 +1,14 @@
+import type { ReactNode } from 'react';
+
 import Header from '@Components/Headers';
 import Sprites from '@Components/Sprites';
 import Footer from '@Components/Footer';
 
 
-async function Layout({ children }: { children: React.ReactNode }) {
+async function Layout({ children }: { children: ReactNode }) {
   return (
     <>
-      <div className='hidden'>
+      <div className="hidden">
         <Sprites />
       </div>
 
