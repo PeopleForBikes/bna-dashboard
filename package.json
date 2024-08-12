@@ -15,7 +15,7 @@
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "4.6.2",
     "next": "14.2.5",
-    "postcss": "8.4.40",
+    "postcss": "8.4.41",
     "postcss-custom-media": "11.0.0",
     "postcss-import": "16.1.0",
     "postcss-media-minmax": "5.0.0",
