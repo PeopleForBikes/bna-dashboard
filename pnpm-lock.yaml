@@ -13,7 +13,7 @@ importers:
         version: 6.5.3(@aws-amplify/core@6.4.4)(@types/react@18.3.11)(aws-amplify@6.6.4(aws-cdk-lib@2.136.0(constructs@10.3.0))(constructs@10.3.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(xstate@4.38.3)
       '@hookform/resolvers':
         specifier: ^3.9.0
-        version: 3.9.0(react-hook-form@7.53.0(react@18.3.1))
+        version: 3.9.0(react-hook-form@7.53.1(react@18.3.1))
       aws-amplify:
         specifier: 6.6.4
         version: 6.6.4(aws-cdk-lib@2.136.0(constructs@10.3.0))(constructs@10.3.0)
@@ -27,8 +27,8 @@ importers:
         specifier: 4.0.13
         version: 4.0.13(react@18.3.1)
       react-hook-form:
-        specifier: 7.53.0
-        version: 7.53.0(react@18.3.1)
+        specifier: 7.53.1
+        version: 7.53.1(react@18.3.1)
       react-spinners:
         specifier: 0.14.1
         version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2012,8 +2012,8 @@ packages:
     peerDependencies:
       react: '>=16.13.1'
 
-  react-hook-form@7.53.0:
-    resolution: {integrity: sha512-M1n3HhqCww6S2hxLxciEXy2oISPnAzxY7gvwVPrtlczTM/1dDadXgUxDpHMrMTblDOcm/AXtXxHwZ3jpg1mqKQ==}
+  react-hook-form@7.53.1:
+    resolution: {integrity: sha512-6aiQeBda4zjcuaugWvim9WsGqisoUk+etmFEsSUMm451/Ic8L/UAb7sRtMj3V+Hdzm6mMjU1VhiSzYUZeBm0Vg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -2546,7 +2546,7 @@ snapshots:
       aws-amplify: 6.6.4(aws-cdk-lib@2.136.0(constructs@10.3.0))(constructs@10.3.0)
       lodash: 4.17.21
       react: 18.3.1
-      react-hook-form: 7.53.0(react@18.3.1)
+      react-hook-form: 7.53.1(react@18.3.1)
       xstate: 4.38.3
     transitivePeerDependencies:
       - '@aws-amplify/core'
@@ -3146,9 +3146,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@hookform/resolvers@3.9.0(react-hook-form@7.53.0(react@18.3.1))':
+  '@hookform/resolvers@3.9.0(react-hook-form@7.53.1(react@18.3.1))':
     dependencies:
-      react-hook-form: 7.53.0(react@18.3.1)
+      react-hook-form: 7.53.1(react@18.3.1)
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -5119,7 +5119,7 @@ snapshots:
       '@babel/runtime': 7.24.1
       react: 18.3.1
 
-  react-hook-form@7.53.0(react@18.3.1):
+  react-hook-form@7.53.1(react@18.3.1):
     dependencies:
       react: 18.3.1
 
