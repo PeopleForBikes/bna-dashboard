@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 
 async function Page() {
-  const pipelineInfo = await sql`SELECT * FROM brokenspoke_pipeline`;
+  const pipelineInfo = await sql`SELECT * FROM bna_pipeline`;
 
   return (
     <div className={styles['layout']}>

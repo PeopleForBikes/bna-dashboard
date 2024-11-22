@@ -13,7 +13,7 @@ function SubmitButton({ text, isPending }: { text: string, isPending: boolean })
       type="submit"
     >
       {isPending
-        ? <ClipLoader color={'#fff'} loading={true} size={15} />
+        ? <ClipLoader color={'var(--white)'} loading={true} size={15} />
         : text
       }
     </button>
