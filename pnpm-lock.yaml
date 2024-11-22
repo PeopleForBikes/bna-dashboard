@@ -5,7 +5,93 @@ settings:
   excludeLinksFromLockfile: false
 
 importers:
-
+  .:
+    dependencies:
+      '@aws-amplify/ui-react':
+        specifier: 6.5.5
+        version: 6.5.5(@aws-amplify/core@6.5.3)(@types/react@18.3.12)(aws-amplify@6.8.2(aws-cdk-lib@2.136.0(constructs@10.3.0))(constructs@10.3.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(xstate@4.38.3)
+      '@hookform/resolvers':
+        specifier: ^3.9.1
+        version: 3.9.1(react-hook-form@7.53.2(react@18.3.1))
+      aws-amplify:
+        specifier: 6.8.2
+        version: 6.8.2(aws-cdk-lib@2.136.0(constructs@10.3.0))(constructs@10.3.0)
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-error-boundary:
+        specifier: 4.1.2
+        version: 4.1.2(react@18.3.1)
+      react-hook-form:
+        specifier: 7.53.2
+        version: 7.53.2(react@18.3.1)
+      react-spinners:
+        specifier: 0.14.1
+        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      ws:
+        specifier: 8.18.0
+        version: 8.18.0
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+    devDependencies:
+      '@types/node':
+        specifier: 22.9.0
+        version: 22.9.0
+      '@types/react':
+        specifier: 18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: 18.3.1
+        version: 18.3.1
+      '@typescript-eslint/eslint-plugin':
+        specifier: 8.14.0
+        version: 8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.15.0)(typescript@5.6.3))(eslint@9.15.0)(typescript@5.6.3)
+      '@typescript-eslint/parser':
+        specifier: 8.14.0
+        version: 8.14.0(eslint@9.15.0)(typescript@5.6.3)
+      autoprefixer:
+        specifier: 10.4.20
+        version: 10.4.20(postcss@8.4.49)
+      del-cli:
+        specifier: 6.0.0
+        version: 6.0.0
+      eslint:
+        specifier: 9.15.0
+        version: 9.15.0
+      eslint-config-next:
+        specifier: 15.0.3
+        version: 15.0.3(eslint@9.15.0)(typescript@5.6.3)
+      eslint-plugin-react:
+        specifier: 7.37.2
+        version: 7.37.2(eslint@9.15.0)
+      eslint-plugin-react-hooks:
+        specifier: 5.0.0
+        version: 5.0.0(eslint@9.15.0)
+      next:
+        specifier: 15.0.3
+        version: 15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      postcss:
+        specifier: 8.4.49
+        version: 8.4.49
+      postcss-custom-media:
+        specifier: 11.0.5
+        version: 11.0.5(postcss@8.4.49)
+      postcss-import:
+        specifier: 16.1.0
+        version: 16.1.0(postcss@8.4.49)
+      postcss-media-minmax:
+        specifier: 5.0.0
+        version: 5.0.0(postcss@8.4.49)
+      postcss-nesting:
+        specifier: 13.0.1
+        version: 13.0.1(postcss@8.4.49)
+      typescript:
+        specifier: 5.6.3
+        version: 5.6.3
   .:
     dependencies:
       '@aws-amplify/ui-react':
@@ -78,7 +164,6 @@ importers:
       typescript:
         specifier: 5.7.2
         version: 5.7.2
-
 packages:
 
   '@aws-amplify/analytics@7.0.59':
@@ -517,7 +602,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
-
+    
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
