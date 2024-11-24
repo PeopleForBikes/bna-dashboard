@@ -9,15 +9,17 @@ import {
 } from '@aws-amplify/ui-react';
 
 
-function Results({ data }) {
-  const listResults = data.map(result => {
-    const [country, region, city, version, ...rest ] = result.split('/');
+function Results({ data }: { data: any }) {
+  const listResults = data.map((result: any) => {
+    const { country, region, city, version, state, score } = result;
 
     return (
-      <TableRow key={`${version}-${city}`}>
+      <TableRow key={`${state}-${city}-${version}`}>
         <TableCell>{country}</TableCell>
         <TableCell>{region}</TableCell>
+        <TableCell>{state}</TableCell>
         <TableCell>{city}</TableCell>
+        <TableCell>{score}</TableCell>
         <TableCell>{version}</TableCell>
       </TableRow>
     );
@@ -31,7 +33,9 @@ function Results({ data }) {
           <TableRow>
             <TableCell as="th">Country</TableCell>
             <TableCell as="th">Region</TableCell>
+            <TableCell as="th">State</TableCell>
             <TableCell as="th">City</TableCell>
+            <TableCell as="th">Score</TableCell>
             <TableCell as="th">Version</TableCell>
           </TableRow>
         </TableHead>

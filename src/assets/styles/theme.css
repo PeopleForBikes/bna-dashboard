@@ -1,27 +1,27 @@
 @layer themes {
   :root {
     /* COLORS */
+    --white: #FFFFFF;
 
     /* primary */
-    --deep-navy:  #00263eff;
-    --cyan:       #009edbff;
-    --red:        #d71920ff;
+    --deep-navy:  #00263EFF;
+    --cyan:       #009EDB;
+    --red:        #D71920FF;
 
     /* secondary */
-    --coal:       #4d4d4fff;
-    --gray:       #8b8a8dff;
-    --white:      #ffffffff;
+    --coal:       #4D4D4FFF;
+    --gray:       #8B8A8DFF;
 
     /* tertiary */
-    --golden-yellow:     #fadb4aff;
+    --golden-yellow:     #FADB4AFF;
 
     /* other */
     --blue-gray: #273B55;
-    --border-gray: #e0e0e0;
+    --border-gray: #E0E0E0;
 
     /* HOVER */
-    --hover-cyan: #2f88c2;
-    --hover-golden-eyllow: #f0d140;
+    --hover-cyan: #2F88C2;
+    --hover-golden-eyllow: #F0D140;
 
     /* BUTTON SHADOW */
     --btn-shadow: 0px 4px 20px -1px rgba(0, 53, 83, 0.13);

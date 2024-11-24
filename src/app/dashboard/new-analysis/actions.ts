@@ -4,16 +4,19 @@ import { cookies } from 'next/headers';
 
 import formSchema from './schema';
 import { ZodIssue } from 'zod';
+import NewAnalysis from '.';
 
 
 type Result = {
-  success: boolean,
-  errors: Array<{
-    message: string;
-  }> | null | ZodIssue[]
+  success: boolean;
+  errors?: {
+    server?: [{ message: string }];
+    validation?: Record<string, { message: string }>;
+  } | null;
+  data?: unknown;
 };
 
-async function ServerAction(prevState: Result, formData: FormData): Promise<Result> {
+async function NewAnalysisAction(prevState: Result, formData: FormData): Promise<Result> {
   const _formData = {
     country: formData.get('country') as string,
     city: formData.get('city') as string,
@@ -21,12 +24,21 @@ async function ServerAction(prevState: Result, formData: FormData): Promise<Resu
     fips_code: formData.get('fips_code') as string
   };
 
-  const isValid = formSchema.safeParse(_formData);
+  const validationErrors: Record<string, { message: string }> = {};
+  const validation = formSchema.safeParse(_formData);
 
-  if (!isValid.success) {
+  if (!validation.success) {
+    for (const issue of validation.error.issues) {
+      const { path, message } = issue;
+      if (path && path[0]) {
+        validationErrors[path[0]] = { message };
+      }
+    }
+
+    console.warn({ validationErrors });
     return {
       success: false,
-      errors: isValid.error.issues
+      errors: { validation: validationErrors }
     };
   }
 
@@ -46,7 +58,7 @@ async function ServerAction(prevState: Result, formData: FormData): Promise<Resu
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accessToken}`
     },
-    body: JSON.stringify(isValid.data)
+    body: JSON.stringify(validation.data)
   };
 
   try {
@@ -55,15 +67,15 @@ async function ServerAction(prevState: Result, formData: FormData): Promise<Resu
     if (!resp.ok) {
       console.error(resp.headers);
       console.error(await resp.text());
-      return { success: false, errors: [{ message: 'Server error' }] };
+      return { success: false, errors: { server: [{ message: 'Server error' }] }};
     }
 
     return { success: true, errors: null };
   } catch (error) {
     console.error('Request Error', error);
-    return { success: false, errors: [{ message: 'Server error' }] };
+    return { success: false, errors: { server: [{ message: 'Server error' }] }};
   }
 }
 
 
-export default ServerAction;
+export default NewAnalysisAction;

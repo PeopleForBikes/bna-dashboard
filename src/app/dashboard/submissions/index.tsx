@@ -17,7 +17,7 @@ function Submissions({ data }) {
     <section>
       <h1>Pending submissions</h1>
       {
-        data.length > 1
+        data.length > 0
           ? <SubmissionTable data={data}/>
           : <Empty />
       }

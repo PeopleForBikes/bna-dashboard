@@ -1,44 +1,39 @@
 {
-  "name": "bna-admin-amplify",
+  "name": "bna-dashboard",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@types/node": "22.9.0",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
-    "@typescript-eslint/eslint-plugin": "8.14.0",
-    "@typescript-eslint/parser": "8.14.0",
+    "@types/node": "22.9.1",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "autoprefixer": "10.4.20",
+    "babel-plugin-react-compiler": "19.0.0-beta-0dec889-20241115",
     "del-cli": "6.0.0",
-    "eslint": "9.15.0",
-    "eslint-config-next": "15.0.3",
-    "eslint-plugin-react": "7.37.2",
-    "eslint-plugin-react-hooks": "5.0.0",
     "next": "15.0.3",
     "postcss": "8.4.49",
     "postcss-custom-media": "11.0.5",
     "postcss-import": "16.1.0",
     "postcss-media-minmax": "5.0.0",
     "postcss-nesting": "13.0.1",
-    "typescript": "5.6.3"
+    "typescript": "5.7.2"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "6.5.5",
-    "@hookform/resolvers": "^3.9.1",
-    "aws-amplify": "6.8.2",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "@aws-amplify/ui-react": "6.7.0",
+    "@hookform/resolvers": "3.9.1",
+    "aws-amplify": "6.9.0",
+    "postgres": "3.4.5",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-error-boundary": "4.1.2",
-    "react-hook-form": "7.53.2",
     "react-spinners": "0.14.1",
     "ws": "8.18.0",
     "zod": "3.23.8"
   },
   "scripts": {
-    "start": "next dev",
+    "start": "next dev --turbo",
     "build": "next build",
     "build:start": "next start",
     "lint": "next lint",
-    "repack": "del node_modules package-lock.json pnpm-lock.yaml && pnpm install"
+    "repack": "del .next node_modules package-lock.json pnpm-lock.yaml && pnpm install"
   }
 }

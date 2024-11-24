@@ -10,17 +10,49 @@
 }
 
 .form {
+  width: 50%;
+  padding: 24px;
+
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 40px;
-}
+  justify-content: center;
+  gap: 16px;
 
-.input-container {
-  display: flex;
-  flex-flow: column nowrap;
+  border: 1px solid var(--Gray-5, #E0E0E0);
+  border-radius: 8px;
 
-  input {
-    padding: 18px 0px 18px 20px;
-    border: 1px solid var(--Gray-5, #E0E0E0);
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  .input-container {
+    display: flex;
+    flex-flow: column nowrap;
+
+    div {
+      display: flex;
+
+      span {
+        margin-inline-start: auto;
+        color: var(--red);
+      }
+    }
+
+    input {
+      padding: 18px 0px 18px 20px;
+      border: 1px solid var(--Gray-5, #E0E0E0);
+    }
+  }
+
+  .actions {
+    margin-left: auto;
+    width: 250px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    gap: 16px;
   }
 }

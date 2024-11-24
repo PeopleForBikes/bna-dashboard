@@ -1,42 +1,37 @@
-import { cookies } from 'next/headers';
-import Results from './index';
+import sql      from '@Utils/db';
+import Results  from './index';
 
 
 async function Page() {
-  const cookieStore = cookies();
-  let accessToken: string | null = null;
-  let data = [];
+  const citySummary = await sql`
+    WITH latest_summaries AS (
+      SELECT
+        city_id,
+        created_at,
+        version,
+        score,
+        ROW_NUMBER() OVER (
+          PARTITION BY city_id ORDER BY created_at DESC
+        ) AS rn
+      FROM summary
+    )
 
-  cookieStore.getAll().forEach(({ name, value }) => {
-    if (name.endsWith('.accessToken')) {
-      accessToken = value;
-    }
-  });
-
-  const metadata = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`
-    }
-  };
-
-  try {
-    const resp = await fetch(`${process.env.NEXT_PUBLIC_BNA_API_URL}/bnas/results`, metadata);
-
-    if (!resp.ok) {
-      console.error(resp.text());
-      return { success: false, errors: {message: 'oops! something went wrong!' }};
-    }
-
-    data = await resp.json();
-  } catch (error) {
-    console.error(error);
-    throw new Error('Fetch failed!');
-  }
+    SELECT
+      s.created_at,
+      s.version,
+      s.score,
+      c.country,
+      c.state,
+      c.region,
+      c.name AS city
+    FROM latest_summaries s
+    JOIN city c ON c.id = s.city_id
+    WHERE s.rn = 1
+    ORDER BY s.created_at DESC;
+  `;
 
   return (
-    <Results data={data} />
+    <Results data={citySummary} />
   );
 }
 
