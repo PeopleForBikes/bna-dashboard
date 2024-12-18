@@ -7,6 +7,11 @@ $ pnpm start
 
 # Resources
 
+## React
+
+* [React Server Components](https://react.dev/reference/rsc)
+
+
 ## Fetching
 * [fetch API in RSC](https://nextjs-faq.com/fetch-api-in-rsc)
 
