@@ -40,8 +40,8 @@ importers:
         version: 3.24.1
     devDependencies:
       '@types/node':
-        specifier: 22.10.2
-        version: 22.10.2
+        specifier: 22.10.5
+        version: 22.10.5
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.1
         version: types-react@19.0.0-rc.1
@@ -128,12 +128,14 @@ packages:
 
   '@aws-amplify/ui-react-core@3.2.0':
     resolution: {integrity: sha512-ELN0i4293U9UjwJqvnn6Tx8bq02UGkU0jRTR+RiD90e6tsOG18DL5OQyjGfvpm4aNmhNVTxxLovNFLfghkY97Q==}
+    deprecated: 3.2.0 is no longer supported
     peerDependencies:
       aws-amplify: ^6.9.0
       react: ^16.14 || ^17 || ^18 || ^19
 
   '@aws-amplify/ui-react@6.8.0':
     resolution: {integrity: sha512-0tvf0AoZ2jPA2QTrlgHRdDs8PtfmRuqMkdjBEtuWrqjlEJgEyISE1qsH3BqjYPmR7rK6EeMLwmbyM2Ix13AMDw==}
+    deprecated: 6.8.0 is no longer supported
     peerDependencies:
       '@aws-amplify/core': '*'
       aws-amplify: ^6.9.0
@@ -897,8 +899,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@22.10.2':
-    resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
+  '@types/node@22.10.5':
+    resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
 
   '@types/react@19.0.2':
     resolution: {integrity: sha512-USU8ZI/xyKJwFTpjSVIrSeHBVAGagkHQKPNbxeWwql/vDmnTIBgx+TJnhFnj1NXgz8XfprU0egV2dROLGpsBEg==}
@@ -2918,7 +2920,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@22.10.2':
+  '@types/node@22.10.5':
     dependencies:
       undici-types: 6.20.0
 
