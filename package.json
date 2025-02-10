@@ -7,7 +7,7 @@
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "autoprefixer": "10.4.20",
-    "babel-plugin-react-compiler": "19.0.0-beta-55955c9-20241229",
+    "babel-plugin-react-compiler": "19.0.0-beta-714736e-20250131",
     "del-cli": "6.0.0",
     "next": "15.1.6",
     "postcss": "8.5.1",
